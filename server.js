@@ -4,7 +4,7 @@
 // init project
 var express = require('express');
 var app = express();
-var PORT = 3000;
+// var PORT = 3000;
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 // so that your API is remotely testable by FCC 
@@ -31,6 +31,9 @@ function getDate (inputDate) {
   var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var dow = inputDate.getUTCDay();
 
+  var dgt = inputDate.getUTCDate();
+  if (dgt < 10) { dgt = '0' + dgt }
+
   var tlm = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var moy = inputDate.getUTCMonth();
 
@@ -45,7 +48,7 @@ function getDate (inputDate) {
 
   var date =
     week[dow] + ", "
-    + inputDate.getUTCDate() + " "
+    + dgt + " "
     + tlm[moy] + " "
     + inputDate.getUTCFullYear() + " "
     + hour + ":"
