@@ -101,13 +101,13 @@ app.get('/api/:zulu', (req, res) => {
   }
 });
 // listen for requests :)
-// var listener = app.listen(process.env.PORT, function () {
-//   console.log('Your app is listening on port ' + listener.address().port);
-// });
-app.listen(PORT, function (err) {
-  err ? console.log("Error in server setup") :
-    console.log("Server listening on Port", PORT);
-})
+var listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
+// app.listen(PORT, function (err) {
+//   err ? console.log("Error in server setup") :
+//     console.log("Server listening on Port", PORT);
+// })
 
 
 
